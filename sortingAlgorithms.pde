@@ -61,29 +61,6 @@ void CocktailShakerSort(){
     }
 }
 
-void RadixSort(){
-
-}
-
-int[] SortByIndex(int[] values, int index){
-  int[][] tempArr = new int[10][values.length];
-  for(int i = 0; i < values.length; i++){
-    String valueString = str(values[i]);
-    int charIndex = valueString.length() - 1 - index;
-    int indexedValue = valueString.charAt(charIndex) - 48;
-    int affectedLength = tempArr[indexedValue].length;
-    tempArr[i][affectedLength] = values[i];
-  }
-  int[] returnList = new int[values.length];
-  for(int i = 0; i < 10; i++){
-   for(int j = 0; j < values.length; j++){
-     if(tempArr[i][j] != 0)
-       returnList[returnList.length] = tempArr[i][j];
-   }
-  }
-  return returnList;
-}
-
 int[] shuffle(int[] list){
  for (int i = list.length-1; i > 0; i--) 
     {
